@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:PM2E10183.ViewModel" x:DataType="viewmodel:LocalizacionViewModel"
+             x:Class="PM2E10183.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#FFF" Padding="5" CornerRadius="0">
+            <Image Source="VISITOR.png" HeightRequest="100" WidthRequest="300"></Image>
+        </Frame>
+        <Label Text="IMAGEN SITIO VISITADO" FontSize="Title" Padding="30,10,30,10" HorizontalTextAlignment="Center"/>
+        <Image HeightRequest="150" WidthRequest="150" x:Name="resultImage"/> 
+        <StackLayout Orientation="Horizontal">
+            <Button Command="{Binding LocalizameCommand}" Text="LOCALIZAR"></Button>
+            <Button Text="SELECCIONAR IMAGEN" Clicked="btnImagen_Clicked"/>
+        </StackLayout>
+        <Label Text="LATITUD"/>
+        <Entry Text="{Binding Latitiud}" IsReadOnly="True" x:Name="txtLatitud"/>
+        <Label Text="LONGITUD"/>
+        <Entry Text="{Binding Longitud}" IsReadOnly="True" x:Name="txtLongitud"/>
+        <Label Text="{Binding Error}" TextColor="Red" />
+        <Entry x:Name="base64Imagen" IsVisible="false"/>
+        <Label Text="DESCRIPCION"/>
+        <Entry x:Name="txtDescripcion" Placeholder="Descripcion aqui..."/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="AGREGAR" Clicked="btnGuardar_Clicked"/>
+            <Button Text="LISTA SITIOS" Clicked="btnLista_Clicked"/>
+        </StackLayout>
+        <Button Text="SALIR APP"/>
+    </StackLayout>
+
+</ContentPage>
