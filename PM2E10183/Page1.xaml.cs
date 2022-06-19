@@ -38,7 +38,7 @@ namespace PM2E10183
             bool respuesta = await DisplayAlert("Accion", "Desea ir a la ubicacion indicada", "Si","No");
             if (respuesta)
             {
-                await Navigation.PushAsync(new Page2(sitio.First().Imagen.ToString(), sitio.First().Latitud.ToString(), sitio.First().Longitud.ToString(), sitio.First().Descripcion.ToString()));
+                await Navigation.PushAsync(new Page2());
             }
 
             

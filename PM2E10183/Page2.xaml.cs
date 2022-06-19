@@ -13,22 +13,19 @@ namespace PM2E10183
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page2 : ContentPage
     {
-        public Page2(string imagen, string latitud, string longitud, string descripcion)
+        public Page2()
         {
             InitializeComponent();
-            txtImagen.Text = imagen;
-            txtDescripcion.Text = descripcion;
 
         }
 
         private async void btnShare_Clicked(object sender, EventArgs e)
         {
-            byte[] Base64Stream = Convert.FromBase64String(txtImagen.Text);
-
-            var source = ImageSource.FromStream(() => new MemoryStream(Base64Stream));
-            await Share.RequestAsync(new ShareFileRequest
+            await Share.RequestAsync(new ShareTextRequest
             {
-                Title = txtDescripcion.Text
+                Subject= "Share with apps test",
+                Text="Test",
+                Title= "PM2E10183"
             }) ;
         }
     }

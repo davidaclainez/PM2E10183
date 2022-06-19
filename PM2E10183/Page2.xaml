@@ -9,6 +9,7 @@
             </Frame>
             <Entry IsVisible="false" x:Name="txtImagen"/>
             <Entry IsVisible="false" x:Name="txtDescripcion"/>
+            
             <Button Text="Compartir Imagen" x:Name="btnShare" Clicked="btnShare_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
